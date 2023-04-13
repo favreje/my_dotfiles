@@ -16,6 +16,7 @@ export VISUAL=/usr/bin/vim
 # Use Vim-style key bindings in the terminal
 set -o vi
 bindkey -M viins 'kj' vi-cmd-mode
+bindkey '^R' history-incremental-search-backward
 
 # Add scripts location to the PATH variable: If user ID is greater than or equal to
 # 1000 and if ~/.local/bin/scripts exists and is a directory and if ~/.local/bin/scripts
@@ -29,9 +30,12 @@ fi
 cdpath=(/ $HOME)
 #
 # Aliases
-alias grep='grep --colour=auto'
+alias grep='grep -P --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
+alias git='/usr/bin/git --no-pager'
 alias ll='ls -lah'
+alias rr='source ranger'
 alias t='task'
 
+# export LC_CTYPE=C

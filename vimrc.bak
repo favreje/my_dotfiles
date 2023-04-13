@@ -45,30 +45,19 @@ Plug 'mhartington/oceanic-next'
 Plug 'jpo/vim-railscasts-theme'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tomasiser/vim-code-dark'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-
 call plug#end()
 
 colorscheme codedark
 "colorscheme OceanicNext
 "colorscheme railscasts 
 "colorscheme nord 
-"colorscheme gruvbox 
 
-set colorcolumn=88
 highlight Normal ctermbg = NONE 
-highlight ColorColumn ctermbg=4
-" highlight CursorLine ctermbg=237
-highlight CursorLine ctermbg=17
+highlight ColorColumn ctermbg=235
+set colorcolumn=88
+highlight CursorLine ctermbg=235
 set cursorline
 highlight Cursor ctermbg=darkgrey
-
-" Set color for line numbers and relative line numbers
-" highlight CursorLineNr ctermfg =214 (also a cool color)
-highlight CursorLineNr ctermfg =208
-highlight LineNr ctermfg =166
 
 " run this line after installing airline
 " let g:airline_theme = 'gruvbox'
@@ -83,18 +72,14 @@ let mapleader = " "
 nnoremap <Leader>n :set rnu!<CR>
 nnoremap <Leader>sp :setlocal spell! spelllang=en_us<CR>
 nnoremap <Leader>t :vert term<CR><C-W>:vert resize 70<CR>
-nnoremap <Leader>ex :20Lexplore<CR>
+nnoremap <Leader>ex :15Lexplore<CR>
 nnoremap <Leader>ve :vsplit$MYVIMRC<CR>
 nnoremap <Leader>so :source $MYVIMRC<CR>
-nnoremap <Leader>rc :edit $MYVIMRC<CR>
 
 augroup python
     autocmd!
     autocmd BufWinEnter *.py nnoremap <F3> :w<CR>:!python %:p<CR>
 augroup END
-
-" Removes automatic comment formatting 
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 set laststatus=2
 set statusline=
@@ -110,5 +95,4 @@ set statusline+=\ %p%%
 set statusline+=\ %l:%c
 set statusline+=\ End:\ %L
 set statusline+=\ 
-
 
